@@ -4,7 +4,9 @@ import "./Sidebar.css"
 export default function Sidebar() {
   return (
     <section className="sidebar">
-      <p>Sidebar</p>
+        <div className="wrapper">
+          <h3>Sidebar</h3>
+        </div>
     </section>
   )
 }

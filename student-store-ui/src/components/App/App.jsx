@@ -4,15 +4,18 @@ import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
+import Hero from "../Hero/Hero"
+import SearchAndFilter from "../SearchAndFilter/SearchAndFilter"
 
 export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
+          <Hero/>
+          <SearchAndFilter/>
           <Home />
         </main>
       </BrowserRouter>

@@ -1,0 +1,28 @@
+
+
+.intro{
+    color: white;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+    background-color: rgb(41, 215, 157);
+    margin: 0 auto;
+    height: 350px;
+}
+
+.content h1{
+    font-size: 60px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.media img{
+    width: 120px;
+    height: 120px;
+    margin: 0 105px 0 50px;
+}
