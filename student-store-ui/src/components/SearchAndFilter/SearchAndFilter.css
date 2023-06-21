@@ -1,0 +1,66 @@
+.row1{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 100px;
+    align-items: center;
+}
+
+.help{
+    display: flex;
+    align-items: center;
+}
+.links{
+    display: flex;
+    align-items: center;
+}
+
+.searchBar{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+}
+
+.search-icons{
+    background-color: rgb(41, 215, 157);
+}
+
+.cart{
+    background-color: rgb(41, 215, 157);
+}
+
+.category-menu li{
+    list-style: none;
+    
+}
+
+.searchAndFilter .content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50%;
+}
+
+.cart{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    gap: 50%;
+}
+
+.row2{
+    display: flex;
+}
+
+.row2 li{
+    list-style: none;
+    padding: 0 20px;
+    display: inline;
+}
