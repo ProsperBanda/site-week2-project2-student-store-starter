@@ -28,16 +28,16 @@ export function SearchAndFilter(props) {
                     <li className="is-active">
                         <button>All Categories</button>
                     </li>
-                    <li>
+                    <li className="clothing"> 
                         <button>Clothing</button>
                     </li>
-                    <li>
+                    <li className="food">
                         <button>Food</button>
                     </li>
-                    <li>
+                    <li className="accessories">
                         <button>Accessories</button>
                     </li>
-                    <li>
+                    <li className="tech">
                         <button>Tech</button>
                     </li>
                 </ul>
