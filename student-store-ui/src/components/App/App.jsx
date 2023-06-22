@@ -1,7 +1,7 @@
 import * as React from "react"
 import { BrowserRouter } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
-import Home from "../Home/Home"
+import About from "../About/About"
 import "./App.css"
 import Hero from "../Hero/Hero"
 import SearchAndFilter from "../SearchAndFilter/SearchAndFilter"
@@ -19,7 +19,7 @@ export default function App() {
           <Hero/>
           <SearchAndFilter/>
           <HomePage/>
-          <Home />
+          <About/>
         </main>
       </BrowserRouter>
     </div>

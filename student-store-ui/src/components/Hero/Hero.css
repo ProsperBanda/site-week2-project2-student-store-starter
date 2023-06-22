@@ -5,7 +5,7 @@
     background-color: rgb(41, 215, 157);
 }
 
-.content{
+.hero .content{
     display: flex;
     align-items: center;
     max-width: 1000px;
