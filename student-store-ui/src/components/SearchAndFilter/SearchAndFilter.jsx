@@ -1,12 +1,18 @@
 import "./SearchAndFilter.css"
 
-export function SearchAndFilter(props) {
+export function SearchAndFilter({text, updateText, filterText, handleFilterChange}) {
     return (
       <div className="searchAndFilter">
         <div className="content">
             <div className="row1">
                 <div className="searchBar">
-                    <input type="text" name="search" placeholder="Search"/>
+                    <input 
+                    type="text" 
+                    name="search" 
+                    placeholder="Search"
+                    value={text}
+                    onChange={ (e) => updateText(e.target.value) }
+                    />
                     <i className="material-icons">search</i>
                 </div>
                 <div className="links">
@@ -25,19 +31,19 @@ export function SearchAndFilter(props) {
                     <i className="material-icons">menu</i>
                 </div>
                 <ul className="category-menu">
-                    <li className="is-active">
+                    <li className="is-active" onClick={() => handleFilterChange("all")}>
                         <button>All Categories</button>
                     </li>
-                    <li className="clothing"> 
+                    <li className="clothing" onClick={() => handleFilterChange("clothing")}> 
                         <button>Clothing</button>
                     </li>
-                    <li className="food">
+                    <li className="food" onClick={() => handleFilterChange("food")}>
                         <button>Food</button>
                     </li>
-                    <li className="accessories">
+                    <li className="accessories" onClick={() => handleFilterChange("accessories")}>
                         <button>Accessories</button>
                     </li>
-                    <li className="tech">
+                    <li className="tech" onClick={() => handleFilterChange("tech")}>
                         <button>Tech</button>
                     </li>
                 </ul>
@@ -48,5 +54,6 @@ export function SearchAndFilter(props) {
       
     )
   }
+
   
   export default SearchAndFilter
