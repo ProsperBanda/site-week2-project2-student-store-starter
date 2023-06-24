@@ -14,6 +14,7 @@
     margin: 0 auto;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 }
 
 .home .product-grid .content h2 {
@@ -24,4 +25,21 @@
     height: 30px;
     display: flex;
     justify-content: center;
+}
+
+.product-grid .product-card {
+    height: 350px;
+    width: 250px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    border-color: #00c385;
+    align-items: center;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -2,6 +2,7 @@ import "./Home.css"
 import { useState } from "react"
 import { useEffect } from "react"
 import axios from 'axios'
+import ProductCard from "../ProductCard/ProductCard"
 
 export function Home(props) {
     return (
@@ -62,15 +63,21 @@ export function Home(props) {
     useEffect(() => {
         console.log(filterDisplay)
     }, [filterDisplay])
+
+    //Button action
+
   
     return (
       <div className="grid-container">
         {searchDisplay.map((product) => (
-          <div className="product-card" key={product.id}>
-            <img src={product.image} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>Price: ${product.price}</p>
-          </div>
+          <ProductCard 
+          name={product.name}
+          key={product.key}
+          image={product.image}
+          price={product.price}
+          id = {product.id}
+          />
+
         ))}
       </div>
     );
