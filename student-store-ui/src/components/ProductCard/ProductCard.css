@@ -1,5 +1,9 @@
 .product-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-card .buttons .material-icons {
+  color: #00c385;
 }

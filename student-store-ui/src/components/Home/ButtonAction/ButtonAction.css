@@ -1,0 +1,17 @@
+.product-info span {
+  display: block;
+  color: #00c385;
+  font-size: 20px;
+}
+
+.product-info .amt {
+  width: 40px;
+  height: 33.5px;
+  border: 0;
+  background: local;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+}
