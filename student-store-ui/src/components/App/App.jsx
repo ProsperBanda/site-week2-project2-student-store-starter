@@ -32,13 +32,20 @@ export default function App() {
         "https://codepath-store-api.herokuapp.com/store",
         body
       );
-      console.log(res);
       setcartItems([]);
       setReceipt(res.data.purchase);
       handleOnCheckoutFormChange("name", "");
       handleOnCheckoutFormChange("email", "");
       resetProductQuantities();
     } catch (err) {}
+  };
+
+  useEffect(() => {
+    console.log(Receipt);
+  }, [Receipt]);
+
+  const handleExitCheckout = () => {
+    setReceipt(null);
   };
 
   const handleOnCheckoutFormChange = (name, value) => {
@@ -127,6 +134,7 @@ export default function App() {
             email={email}
             name={name}
             Receipt={Receipt}
+            handleExitCheckout={handleExitCheckout}
           />
           <Hero />
           <SearchAndFilter

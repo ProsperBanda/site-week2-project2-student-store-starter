@@ -115,6 +115,14 @@ export default function Sidebar(props) {
                       <p>{props.Receipt.receipt.lines[1]}</p>
                       <p>{props.Receipt.receipt.lines[2]}</p>
                       <p>{props.Receipt.receipt.lines[3]}</p>
+                      <p>
+                        <button
+                          className="exit"
+                          onClick={props.handleExitCheckout}
+                        >
+                          Exit
+                        </button>
+                      </p>
                     </div>
                   ) : (
                     <div className="content">

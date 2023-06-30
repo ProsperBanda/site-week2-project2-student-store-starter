@@ -1,24 +1,30 @@
 import * as React from "react";
+import "./Cart.css";
 
 export default function Cart(props) {
   let subTotal = 0;
   const { cartItems, products } = props;
   console.log(cartItems);
   const displayCartItems = cartItems.map((item) => {
-    // const product = props.products[item.itemId - 1];
     const product = products.find((p) => p.id === item.itemId);
     const totalPrice = item.quantity * product.price;
     subTotal += totalPrice;
 
     return (
       <div className="display-cart-items" key={product.id}>
-        <p>{product.name}</p>
-        <p>{item.quantity}</p>
-        <p>{`$${product.price.toFixed(2)}`}</p>
-        <p>{`$${totalPrice.toFixed(2)}`}</p>
+        <span className="flex-2 cart-product-name">{product.name}</span>
+        <span className="center cart-product-quantity">{item.quantity}</span>
+        <span className="center cart-product-price">{`$${product.price.toFixed(
+          2
+        )}`}</span>
+        <span className="center cart-product-total">{`$${totalPrice.toFixed(
+          2
+        )}`}</span>
       </div>
     );
   });
+
+  console.log(subTotal);
 
   return (
     <div className="cart-items">
@@ -36,6 +42,12 @@ export default function Cart(props) {
       </div>
 
       <div>{displayCartItems}</div>
+      <div className="receipt-subtotal">
+        <span className="label">Subtotal</span>
+        <span></span>
+        <span></span>
+        <span className="center subtotal">{subTotal.toFixed(2)}</span>
+      </div>
     </div>
   );
 }
