@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./ButtonAction.css";
 
-function CounterButton() {
+function CounterButton({ id, handleAddProduct, handleRemoveProduct }) {
   const [count, setCount] = useState(0);
 
   const handleClick = () => {
     setCount((prevCount) => prevCount + 1);
   };
 
+  const handleAddCart = (id) => {
+    handleAddProduct(id);
+    handleClick();
+  };
+
   const handleDecrement = () => {
     setCount((prevCount) => prevCount - 1);
+  };
+
+  const handleRemoveCart = (id) => {
+    handleRemoveProduct(id);
+    handleDecrement();
   };
 
   useEffect(() => {
@@ -18,10 +28,10 @@ function CounterButton() {
 
   return (
     <div className="buttons">
-      <button className="add" onClick={handleClick}>
+      <button className="add" onClick={() => handleAddCart(id)}>
         <i className="material-icons">add</i>
       </button>
-      <button className="remove" onClick={handleDecrement}>
+      <button className="remove" onClick={() => handleRemoveCart(id)}>
         <i className="material-icons">remove</i>
       </button>
       <button className="amt">

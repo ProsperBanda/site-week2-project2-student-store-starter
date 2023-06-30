@@ -1,0 +1,4 @@
+.display-cart-items {
+  display: flex;
+  flex-direction: row;
+}

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import CounterButton from "../Home/ButtonAction/ButtonAction";
 
 export default function ProductCard(props) {
+  // const { product } = props;
   return (
     <div className="product-card" key={props.id}>
       <Link to={`/products/${props.id}`}>
@@ -17,16 +18,11 @@ export default function ProductCard(props) {
           {props.showDescription && <p>{props.description}</p>}
         </div>
         <div className="actions">
-          <CounterButton />
-          {/* <div className="buttons">
-            <button className="add">
-              <i className="material-icons">add</i>
-            </button>
-            <button className="remove">
-              <i className="material-icons">remove</i>
-            </button>
-          </div> */}
-          {/* <span className="quantity"></span> */}
+          <CounterButton
+            id={props.id}
+            handleAddProduct={props.handleAddProduct}
+            handleRemoveProduct={props.handleRemoveProduct}
+          />
         </div>
       </div>
     </div>

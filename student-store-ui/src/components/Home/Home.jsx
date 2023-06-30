@@ -13,6 +13,9 @@ export function Home(props) {
           <HomePage
             searchText={props.searchText}
             filterText={props.filterText}
+            handleAddProduct={props.handleAddProduct}
+            handleRemoveProduct={props.handleRemoveProduct}
+            products={props.products}
           />
         </div>
       </div>
@@ -21,36 +24,19 @@ export function Home(props) {
 }
 
 const HomePage = (props) => {
-  const [products, setProducts] = useState([]);
   const [searchDisplay, setSearchDisplay] = useState([]);
   const [filterDisplay, setFilterDisplay] = useState([]);
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "https://codepath-store-api.herokuapp.com/store"
-      );
-      console.log(response);
-      setProducts(response.data.products);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  useEffect(() => {
     if (props.filterText === "all") {
-      setFilterDisplay(products);
+      setFilterDisplay(props.products);
     } else {
-      const newDisplay = products.filter((item) => {
+      const newDisplay = props.products.filter((item) => {
         return item.category === props.filterText;
       });
       setFilterDisplay(newDisplay);
     }
-  }, [props.filterText, products]);
+  }, [props.filterText, props.products]);
 
   useEffect(() => {
     if (props.searchText === "") {
@@ -78,6 +64,8 @@ const HomePage = (props) => {
           image={product.image}
           price={product.price}
           id={product.id}
+          handleAddProduct={props.handleAddProduct}
+          handleRemoveProduct={props.handleRemoveProduct}
         />
       ))}
     </div>
